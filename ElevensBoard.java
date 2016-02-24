@@ -50,7 +50,7 @@ public class ElevensBoard
 	/**
 	 * Flag used to control debugging print statements.
 	 */
-	private static final boolean I_AM_DEBUGGING = true;
+	private static final boolean I_AM_DEBUGGING = false;
 
 
 	/**
@@ -272,8 +272,10 @@ public class ElevensBoard
 			if (card != null) {
 				k = card.pointValue();
 				for (Card card2: cards) {
-					if (card2.pointValue() + k == 11) {
-						return true;
+					if (card2 != null) {
+						if (card2.pointValue() + k == 11) {
+							return true;
+						}
 					}
 				}
 			}
@@ -320,7 +322,6 @@ public class ElevensBoard
 	private boolean containsJQK(List<Integer> selectedCards) 
    {
 		/* *** TO BE IMPLEMENTED IN EXPERIMENT03 *** */
-		int k = 0;
 		Boolean Jack = false;
 		Boolean Queen = false;
 		Boolean King = false;
